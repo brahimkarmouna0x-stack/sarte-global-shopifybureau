@@ -18,12 +18,12 @@ import type { SiteSettings } from "@/types";
 
 import "./globals.css";
 
-const ContactDialog = dynamic(
-  () => import("@/components/contact/ContactDialog").then((m) => m.ContactDialog),
+const ContactDialog = dynamic(() =>
+  import("@/components/contact/ContactDialog").then((m) => m.ContactDialog),
 );
 
-const ArticleDialog = dynamic(
-  () => import("@/components/journal/ArticleDialog").then((m) => m.ArticleDialog),
+const ArticleDialog = dynamic(() =>
+  import("@/components/journal/ArticleDialog").then((m) => m.ArticleDialog),
 );
 
 const SITE_URL = SITE.url;
@@ -112,23 +112,55 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "GSC-VERIFICATION-CODE-HERE",
+    google: "hzFViQw5sUUf_jz_3RwricO3OsqeeNTMiYNWjL4uE68",
   },
   manifest: "/site.webmanifest",
   icons: {
     icon: [
       { url: "/favicon/favicon.ico?v=6", sizes: "any" },
-      { url: "/favicon/favicon-16x16.png?v=6", type: "image/png", sizes: "16x16" },
-      { url: "/favicon/favicon-32x32.png?v=6", type: "image/png", sizes: "32x32" },
-      { url: "/favicon/favicon-48x48.png?v=6", type: "image/png", sizes: "48x48" },
-      { url: "/favicon/android-chrome-192x192.png?v=6", type: "image/png", sizes: "192x192" },
-      { url: "/favicon/android-chrome-512x512.png?v=6", type: "image/png", sizes: "512x512" },
+      {
+        url: "/favicon/favicon-16x16.png?v=6",
+        type: "image/png",
+        sizes: "16x16",
+      },
+      {
+        url: "/favicon/favicon-32x32.png?v=6",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "/favicon/favicon-48x48.png?v=6",
+        type: "image/png",
+        sizes: "48x48",
+      },
+      {
+        url: "/favicon/android-chrome-192x192.png?v=6",
+        type: "image/png",
+        sizes: "192x192",
+      },
+      {
+        url: "/favicon/android-chrome-512x512.png?v=6",
+        type: "image/png",
+        sizes: "512x512",
+      },
     ],
     shortcut: ["/favicon/favicon.ico?v=6"],
     apple: [
-      { url: "/favicon/apple-touch-icon-152x152.png?v=6", type: "image/png", sizes: "152x152" },
-      { url: "/favicon/apple-touch-icon-167x167.png?v=6", type: "image/png", sizes: "167x167" },
-      { url: "/favicon/apple-touch-icon.png?v=6", type: "image/png", sizes: "180x180" },
+      {
+        url: "/favicon/apple-touch-icon-152x152.png?v=6",
+        type: "image/png",
+        sizes: "152x152",
+      },
+      {
+        url: "/favicon/apple-touch-icon-167x167.png?v=6",
+        type: "image/png",
+        sizes: "167x167",
+      },
+      {
+        url: "/favicon/apple-touch-icon.png?v=6",
+        type: "image/png",
+        sizes: "180x180",
+      },
     ],
   },
   other: {
@@ -194,7 +226,8 @@ function buildOrganizationJsonLd(settings: SiteSettings) {
     image: `${SITE_URL}/images/company-img.png`,
     description:
       "Sarte Global maakt professionele webshops voor ondernemers en bedrijven in Nederland. Modern design, sterke SEO, snelle oplevering en focus op resultaat.",
-    slogan: "Professionele, moderne webshops voor bedrijven en ondernemers in Nederland.",
+    slogan:
+      "Professionele, moderne webshops voor bedrijven en ondernemers in Nederland.",
     priceRange: "€€",
     sameAs: sameAs.length > 0 ? sameAs : FALLBACK_SAME_AS,
     knowsAbout: [
