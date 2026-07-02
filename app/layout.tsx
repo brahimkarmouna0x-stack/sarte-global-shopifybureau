@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from "next";
 import dynamic from "next/dynamic";
 import type { ReactNode } from "react";
 
-import { WhatsAppFloatingButton } from "@/components/contact/WhatsAppFloatingButton";
-import { BackToTopButton } from "@/components/ui/BackToTopButton";
-import { CookieBar } from "@/components/ui/CookieBar";
+const WhatsAppFloatingButton = dynamic(() => import("@/components/contact/WhatsAppFloatingButton").then(m => m.WhatsAppFloatingButton), { ssr: false });
+const BackToTopButton = dynamic(() => import("@/components/ui/BackToTopButton").then(m => m.BackToTopButton), { ssr: false });
+const CookieBar = dynamic(() => import("@/components/ui/CookieBar").then(m => m.CookieBar), { ssr: false });
 import { Footer } from "@/components/layouts/Footer";
 import { Navigation } from "@/components/layouts/Navigation";
 import { ArticleDialogProvider } from "@/contexts/ArticleDialogContext";
@@ -20,10 +20,12 @@ import "./globals.css";
 
 const ContactDialog = dynamic(() =>
   import("@/components/contact/ContactDialog").then((m) => m.ContactDialog),
+  { ssr: false }
 );
 
 const ArticleDialog = dynamic(() =>
   import("@/components/journal/ArticleDialog").then((m) => m.ArticleDialog),
+  { ssr: false }
 );
 
 const SITE_URL = SITE.url;
